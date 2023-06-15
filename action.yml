@@ -41,7 +41,7 @@ runs:
         DETECT_SECRET_VERSION: ${{ inputs.detect_secrets_version }}
     - name: Check for secrets
       shell: bash
-      run: $GITHUB_ACTION_PATH/detect-new-secrets.sh
+      run: $GITHUB_ACTION_PATH/detect-new-secrets.pl
       env:
         BASELINE_FILE: ${{ inputs.baseline_file }}
         DETECT_SECRET_ADDITIONAL_ARGS: ${{ inputs.detect_secret_additional_args }}
