@@ -55,23 +55,8 @@ jobs:
         spell_check_this: check-spelling/spell-check-this@prerelease
         post_comment: 0
         experimental_apply_changes_via_bot: 1
-
-  comment:
-    name: Report
-    runs-on: ubuntu-latest
-    needs: spelling
-    permissions:
-      contents: write
-      pull-requests: write
-    if: (success() || failure()) && needs.spelling.outputs.followup
-    steps:
-    - name: comment
-      uses: check-spelling/check-spelling@prerelease
-      with:
-        checkout: true
-        spell_check_this: check-spelling/spell-check-this@prerelease
-        task: ${{ needs.spelling.outputs.followup }}
-        experimental_apply_changes_via_bot: 1
+        extra_dictionaries:
+          cspell:software-terms/dict/softwareTerms.txt
 
   update:
     name: Update PR
