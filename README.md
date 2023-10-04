@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Secret Scanner
         uses: secret-scanner/action@0.0.2
 ```
@@ -89,7 +89,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Configuration
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Secret Scanner
         uses: secret-scanner/action@0.0.2
         with:
